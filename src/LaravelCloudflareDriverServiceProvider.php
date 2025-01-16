@@ -2,6 +2,8 @@
 
 namespace Rollogi\LaravelCloudflareDriver;
 
+use Rollogi\LaravelCloudflareDriver\Commands\D1MakeMigrationCommand;
+use Rollogi\LaravelCloudflareDriver\Commands\D1MigrateCommand;
 use Rollogi\LaravelCloudflareDriver\D1\CloudflareD1Connector;
 use Rollogi\LaravelCloudflareDriver\D1\D1Connection;
 use Spatie\LaravelPackageTools\Exceptions\InvalidPackage;
@@ -40,6 +42,10 @@ class LaravelCloudflareDriverServiceProvider extends PackageServiceProvider
     public function configurePackage(Package $package): void
     {
         $package
+            ->hasCommands([
+                D1MigrateCommand::class,
+                D1MakeMigrationCommand::class,
+            ])
             ->name('laravel-cloudflare-driver');
     }
 }
