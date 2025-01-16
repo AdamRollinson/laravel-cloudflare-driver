@@ -31,6 +31,31 @@ CLOUDFLARE_ACCOUNT_ID=
 CLOUDFLARE_D1_DATABASE_ID=
 ```
 
+## Commands
+
+```dotenv
+php artisan d1:migrate
+php artisan d1:migrate refresh
+php artisan d1:migrate reset
+php artisan d1:migrate rollback
+php artisan d1:migrate status
+
+php artisan make:d1 {name}
+```
+
+## Command Options
+
+### d1:migrate
+```dotenv
+--connection= : The database connection to use
+--force : Force the operation to run when in production
+```
+
+### make:d1
+```dotenv
+--name= : The name of the migration file
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
